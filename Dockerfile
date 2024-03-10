@@ -27,9 +27,3 @@ COPY motd.sh /etc/profile.d/motd.sh
 
 # Add execute permissions to the custom message of the day script
 RUN chmod +x /etc/profile.d/motd.sh
-
-# Expose port 2222
-EXPOSE 2222
-
-# Start the SSH daemon
-CMD ["/usr/sbin/sshd", "-D"]
