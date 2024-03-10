@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("ssh/ssh")
+        app = docker.build("backupy/backupy")
     }
 
     stage('Create docker-compose file') {
@@ -20,13 +20,12 @@ node {
         sh 'echo "version: \'3\'" > docker-compose.yml'
         sh 'echo "services:" >> docker-compose.yml'
         sh 'echo "  app:" >> docker-compose.yml'
-        sh 'echo "    image: ssh/ssh" >> docker-compose.yml'
-        sh 'echo "    container_name: ssh" >> docker-compose.yml'
-        sh 'echo "    hostname: ssh" >> docker-compose.yml'
+        sh 'echo "    image: backupy/backupy" >> docker-compose.yml'
+        sh 'echo "    container_name: backupy" >> docker-compose.yml'
+        sh 'echo "    hostname: backupy" >> docker-compose.yml'
         sh 'echo "    ports:" >> docker-compose.yml'
         sh 'echo "      - 2222:2222" >> docker-compose.yml'
         sh 'echo "    volumes:" >> docker-compose.yml'
-        sh 'echo "      - /mnt/docker/ssh_cm-home:/root/cm" >> docker-compose.yml'
         sh 'echo "    environment:" >> docker-compose.yml'
         sh 'echo "      - TZ=Europe/Amsterdam" >> docker-compose.yml'
     }
