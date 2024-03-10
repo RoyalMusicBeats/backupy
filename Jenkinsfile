@@ -25,7 +25,6 @@ node {
         sh 'echo "    hostname: backupy" >> docker-compose.yml'
         sh 'echo "    ports:" >> docker-compose.yml'
         sh 'echo "      - 2222:2222" >> docker-compose.yml'
-        sh 'echo "    volumes:" >> docker-compose.yml'
         sh 'echo "    environment:" >> docker-compose.yml'
         sh 'echo "      - TZ=Europe/Amsterdam" >> docker-compose.yml'
     }
