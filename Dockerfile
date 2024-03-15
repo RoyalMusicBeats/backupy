@@ -17,7 +17,7 @@ COPY script.sh /mnt/script.sh
 RUN chmod +x /mnt/script.sh
 
 # Run the script when the container starts
-RUN "/mnt/script.sh"
+RUN /mnt/script.sh
 
 # Remove the default message of the day
 RUN rm /etc/motd
