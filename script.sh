@@ -1,17 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 
-echo "Hello"
+# Create a file in /root directory
+touch /root/myfile.txt
 
-# Path: script2.sh
-#!/bin/bash
-
-
-echo "Hello"
-```
-
-# Path: script2.sh
-#!/bin/bash
-
-
-echo "Hello"
-```
+# Check if the file was created successfully
+if [ -e /root/myfile.txt ]; then
+    echo "File created successfully in /root directory."
+else
+    echo "Failed to create file in /root directory."
+fi
