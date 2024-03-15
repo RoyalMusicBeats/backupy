@@ -1,6 +1,11 @@
 node {
     def app
 
+    options {
+      buildDiscarder(logRotator(numToKeepStr: '10', daysToKeepStr: '60'))
+      parallelsAlwaysFailFast()
+    }
+
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
