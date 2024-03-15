@@ -6,20 +6,17 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '10', daysToKeepStr: '60'))
     parallelsAlwaysFailFast()
   }
-    stage('Clone repository') {
-        /* Let's make sure we have the repository cloned to our workspace */
-
-        checkout scm
-    }
-
     stages {
+        stage('Clone repository') {
+            /* Let's make sure we have the repository cloned to our workspace */
+            checkout scm
+        }
         stage('Build image') {
             /* This builds the actual image; synonymous to
              * docker build on the command line */
 
             app = docker.build("backupy/backupy")
         }
-
         stage('Create docker-compose file') {
             /* This stage creates the docker-compose file */
 
@@ -34,7 +31,6 @@ pipeline {
             sh 'echo "    environment:" >> docker-compose.yml'
             sh 'echo "      - TZ=Europe/Amsterdam" >> docker-compose.yml'
         }
-
         stage('Execute docker-compose up') {
             /* This stage executes the docker-compose file */
             sh 'docker-compose up -d'
