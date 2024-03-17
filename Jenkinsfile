@@ -48,9 +48,9 @@ pipeline {
                 sh 'docker-compose down'
             }
         }
-        stage('Kill docker containers') {
+        stage('Remove docker containers') {
             steps {
-                sh 'docker kill $(docker ps -q)'
+                sh 'docker remove $(docker ps -a -q)'
             }
         }
         stage('Approval to Prod') {
