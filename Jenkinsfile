@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'X86-64-MULTI'
+        label 'test-prod-boz-001'
     }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', daysToKeepStr: '60'))
