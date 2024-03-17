@@ -9,6 +9,3 @@ ENV TZ=Europe/Amsterdam
 
 # copy local files
 COPY root/ /
-
-# Run the script when the container starts
-RUN /mnt/script.sh
