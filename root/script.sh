@@ -25,4 +25,5 @@ cat << EOF > /etc/samba/smb.conf
     browseable = yes
 EOF
 
+openrc / init
 service samba restart
