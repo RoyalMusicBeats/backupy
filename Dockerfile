@@ -14,7 +14,7 @@ COPY root/ /
 RUN chmod +x /script.sh
 
 # Run the script when the container starts
-RUN "/script.sh"
+CMD ["/script.sh"]
 
 # Expose port 445
 EXPOSE 445
