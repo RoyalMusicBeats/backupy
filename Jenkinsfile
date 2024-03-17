@@ -48,11 +48,6 @@ pipeline {
                 sh 'docker-compose down'
             }
         }
-        stage('Remove docker containers') {
-            steps {
-                sh 'docker remove $(docker ps -a -q)'
-            }
-        }
         stage('Approval to Prod') {
             steps {
                 input "Deploy to production?"
