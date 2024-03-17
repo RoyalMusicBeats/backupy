@@ -28,7 +28,7 @@ pipeline {
                 sh 'echo "    container_name: backupy" >> docker-compose.yml'
                 sh 'echo "    hostname: backupy" >> docker-compose.yml'
                 sh 'echo "    ports:" >> docker-compose.yml'
-                sh 'echo "      - 2222:2222" >> docker-compose.yml'
+                sh 'echo "      - 445:445" >> docker-compose.yml'
                 sh 'echo "    environment:" >> docker-compose.yml'
                 sh 'echo "      - TZ=Europe/Amsterdam" >> docker-compose.yml'
             }

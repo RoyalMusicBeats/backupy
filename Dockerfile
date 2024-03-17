@@ -9,3 +9,6 @@ ENV TZ=Europe/Amsterdam
 
 # copy local files
 COPY root/ /
+
+# Expose port 445
+EXPOSE 445
