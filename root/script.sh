@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 mkdir /share
 chmod 777 /share
@@ -25,5 +25,8 @@ cat << EOF > /etc/samba/smb.conf
     browseable = yes
 EOF
 
-openrc / init
-service samba restart
+while true; do
+    openrc / init
+    service samba restart
+    sleep 1
+done
