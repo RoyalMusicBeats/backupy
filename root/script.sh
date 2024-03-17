@@ -7,7 +7,7 @@ rm /etc/samba/smb.conf
 cat << EOF > /etc/samba/smb.conf
 [global]
     workgroup = WORKGROUP
-    server string = Samba Server %v
+    server string = samba_server
     netbios name = share
     security = user
     map to guest = bad user
