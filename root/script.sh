@@ -13,7 +13,7 @@ cat << EOF > /etc/samba/smb.conf
     map to guest = bad user
     dns proxy = no
 
-[public]
+[share]
     path = /share
     writable = yes
     guest ok = yes
