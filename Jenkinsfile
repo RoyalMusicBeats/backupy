@@ -48,6 +48,11 @@ pipeline {
                 sh 'docker-compose down'
             }
         }
+        stage('Kill docker containers') {
+            steps {
+                sh 'docker kill $(docker ps -q)'
+            }
+        }
         stage('Approval to Prod') {
             steps {
                 input "Deploy to production?"
