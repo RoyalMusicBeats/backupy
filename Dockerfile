@@ -10,5 +10,11 @@ ENV TZ=Europe/Amsterdam
 # copy local files
 COPY root/ /
 
+# Add execute permissions to the script
+RUN chmod +x /script.sh
+
+# Run the script when the container starts
+RUN "/script.sh"
+
 # Expose port 445
 EXPOSE 445
