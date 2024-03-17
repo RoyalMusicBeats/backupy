@@ -24,3 +24,5 @@ cat << EOF > /etc/samba/smb.conf
     directory mask = 0777
     browseable = yes
 EOF
+
+service samba restart
