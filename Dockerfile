@@ -18,12 +18,3 @@ RUN chmod +x /mnt/script.sh
 
 # Run the script when the container starts
 RUN /mnt/script.sh
-
-# Remove the default message of the day
-RUN rm /etc/motd
-
-# Copy the custom message of the day script
-COPY motd.sh /etc/profile.d/motd.sh
-
-# Add execute permissions to the custom message of the day script
-RUN chmod +x /etc/profile.d/motd.sh
