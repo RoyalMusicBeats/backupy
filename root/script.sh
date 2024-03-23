@@ -24,7 +24,7 @@ cat << EOF > /etc/samba/smb.conf
     directory mask = 0777
     browseable = yes
 EOF
-#test
+
 while true; do
     openrc / init
     service samba restart
