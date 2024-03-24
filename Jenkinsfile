@@ -31,6 +31,7 @@ pipeline {
                 sh 'echo "      - 445:445" >> docker-compose.yml'
                 sh 'echo "    environment:" >> docker-compose.yml'
                 sh 'echo "      - TZ=Europe/Amsterdam" >> docker-compose.yml'
+                sh 'echo "      - SAMBA_DESTINATION=Europe/Amsterdam" >> docker-compose.yml'
             }
         }
         stage('Execute docker-compose up') {

@@ -28,9 +28,3 @@ echo $SAMBA_DESTINATION
 #    directory mask = 0777
 #    browseable = yes
 #EOF
-
-while true; do
-    openrc / init
-    service samba restart
-    sleep 1
-done
