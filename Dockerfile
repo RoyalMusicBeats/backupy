@@ -16,6 +16,7 @@ COPY root/ /
 RUN chmod +x /script.sh
 
 # This Dockerfile sets the entrypoint to "tail -f /dev/null".
-# The purpose of this entrypoint is to keep the container running indefinitely,
+# The purpose of this entrypoint is to keep the container running indefinitely.
+CMD ["tail", "-f", "/dev/null"]
 # allowing it to be used as a base image for other containers or as a placeholder.
 ENTRYPOINT ["/script.sh"]
