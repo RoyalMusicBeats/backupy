@@ -1,9 +1,9 @@
 #!/bin/sh
 
-mkdir /share
-chmod 777 /share
+mkdir /cifs
+chmod 777 /cifs
 
-mount -t cifs -o credentials=/cifs/.cifs "$SAMBA_DESTINATION" "/cifs/share"
+sudo mount -t cifs -o credentials=/cifs/.cifs "$SAMBA_DESTINATION" "/cifs/share"
 
 #rm /etc/samba/smb.conf
 #cat << EOF > /etc/samba/smb.conf
