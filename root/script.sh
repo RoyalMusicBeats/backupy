@@ -3,9 +3,7 @@
 mkdir /share
 chmod 777 /share
 
-echo $SAMBA_DESTINATION
-
-# mount -t cifs -o credentials=<Credentials Filename> //192.0.2.17/SharedFiles /mnt/smb_share
+mount -t cifs -o credentials=/cifs/.cifs "$SAMBA_DESTINATION" "/cifs/share"
 
 #rm /etc/samba/smb.conf
 #cat << EOF > /etc/samba/smb.conf
@@ -31,6 +29,6 @@ echo $SAMBA_DESTINATION
 
 while true; do
     openrc / init
-    service samba restart
+    service cifs restart
     sleep 1
 done

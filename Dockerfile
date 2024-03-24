@@ -6,7 +6,6 @@ RUN apk update && apk add iputils nano openrc tzdata cifs-utils psmisc
 
 # Set the timezone to Europe/Amsterdam
 ENV TZ=Europe/Amsterdam
-ENV SAMBA_SOURCE=TEST1
 ENV SAMBA_DESTINATION=TEST2
 
 # copy local files
